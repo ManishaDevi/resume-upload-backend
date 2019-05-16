@@ -1,0 +1,22 @@
+{
+  "name": "soulskill-backend",
+  "version": "1.0.0",
+  "description": "Soulskill assignment using express js and node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "assingment"
+  ],
+  "author": "manisha devi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.8"
+  }
+}
