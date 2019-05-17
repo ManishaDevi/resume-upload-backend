@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const UserModel = require('./../../models/user');
 const response = require('./../responses');
+const uploader = require('./../../helpers/multer')
 
 module.exports = {
     submit: (req, res, next) => {
@@ -17,6 +18,15 @@ module.exports = {
             } else {
                 response.error(res)
             }
+        });
+    },
+    upload: (req, res, next) => {
+        uploader.single('resume')(req, res, function (err, some) {
+            if (err) {
+                return res.status(422).send({ errors: [{ title: 'Image Upload Error', detail: err.message }] });
+            }
+
+            return response.ok(res, { imageUrl: req.file.location })
         });
     }
 }
